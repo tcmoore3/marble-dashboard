@@ -44,5 +44,5 @@ if __name__ == '__main__':
     #notes_mod = Notes(name='Keep running?', key='keep_running')
     #modules.append(notes_mod)
     config = {'PER_PAGE': 50}
-    pr = signac.get_project('/gpfs/alpine/scratch/mtimc/mat110/coexistence')
+    pr = signac.get_project('/gpfs/alpine/mat110/proj-shared/patchy-polygons')
     PlotDashboard(config=config, modules=modules, project=pr).main()
