@@ -1,6 +1,7 @@
 from signac_dashboard import Dashboard
 from signac_dashboard.modules import StatepointList, ImageViewer, VideoViewer
 from signac_dashboard.modules import Notes
+import signac
 
 
 class PlotDashboard(Dashboard):
@@ -43,4 +44,5 @@ if __name__ == '__main__':
     #notes_mod = Notes(name='Keep running?', key='keep_running')
     #modules.append(notes_mod)
     config = {'PER_PAGE': 50}
-    PlotDashboard(config=config, modules=modules).main()
+    pr = signac.get_project('/gpfs/alpine/scratch/mtimc/mat110/coexistence')
+    PlotDashboard(config=config, modules=modules, project=pr).main()
