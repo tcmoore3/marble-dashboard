@@ -18,20 +18,7 @@ class PlotDashboard(Dashboard):
 if __name__ == '__main__':
     modules = []
     modules.append(StatepointList())
-    img_globs = [
-            'number-of-bonds.png',
-            'packing-fraction-timeseries.png',
-            'bond-saturation-vs-time.png',
-            'patch-energy.png',
-            'most-frequent-bonds-vs-time.png',
-            'patch-energy-derivative.png',
-            'hexatic.png',
-            'body-orientation.png',
-            'nbonds.png',
-            'diffraction.png',
-            'pmft.png',
-            'pe.png',
-            ]
+    img_globs = []
     for img_glob in img_globs:
         mod_name = img_glob.replace('-', ' ').replace('.png', '').capitalize()
         modules.append(
@@ -40,6 +27,8 @@ if __name__ == '__main__':
                     name=mod_name,
                 )
         )
+    modules.append(ImageViewer(img_glob='test-fresnel-render.png', name='Color by hexatic order'))
+    modules.append(ImageViewer(img_glob='color-by-bonds.png', name='Color by number of bonds'))
     notes_mod = Notes(name='Structure', key='structure')
     #notes_mod = Notes(name='Keep running?', key='keep_running')
     #modules.append(notes_mod)
